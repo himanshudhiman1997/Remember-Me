@@ -9,11 +9,11 @@ data class Todo(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "todo_id")
-    val id: Int,
+    var id: Int,
 
     @ColumnInfo(name = "todo_title")
-    val title: String,
+    var title: String,
 
     @ColumnInfo(name = "todo_description")
-    val description: String
+    var description: String
 )

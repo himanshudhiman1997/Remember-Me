@@ -4,23 +4,23 @@ class TodoRepository(private val dao: TodoDAO) {
 
     val todos = dao.getAllTodo()
 
-    suspend fun insert(todo: Todo)
+    suspend fun insert(todo: Todo) : Long
     {
-        dao.insertTodo(todo)
+        return dao.insertTodo(todo)
     }
 
-    suspend fun update(todo: Todo)
+    suspend fun update(todo: Todo) : Int
     {
-        dao.updateTodo(todo)
+        return dao.updateTodo(todo)
     }
 
-    suspend fun delete(todo: Todo)
+    suspend fun delete(todo: Todo) : Int
     {
-        dao.deleteTodo(todo)
+        return dao.deleteTodo(todo)
     }
 
-    suspend fun deleteAllTodo()
+    suspend fun deleteAllTodo() : Int
     {
-        dao.deleteAll()
+        return dao.deleteAll()
     }
 }

@@ -10,13 +10,13 @@ interface TodoDAO{
     suspend fun insertTodo(todo: Todo) : Long
 
     @Update
-    suspend fun updateTodo(todo: Todo)
+    suspend fun updateTodo(todo: Todo) : Int
 
     @Delete
-    suspend fun deleteTodo(todo: Todo )
+    suspend fun deleteTodo(todo: Todo ) : Int
 
     @Query("DELETE FROM todo_data_table")
-    suspend fun deleteAll()
+    suspend fun deleteAll() : Int
 
     @Query("SELECT * FROM todo_data_table")
     fun getAllTodo() : LiveData<List<Todo>>
